@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+     <property name="logerr.path" value="/data/logs/jsplatform/err" />
+     <property name="liubao.path" value="/data/logs/jsplatform/liubao" />
+      <property name="liubaoclk.path" value="/data/logs/jsplatform/liubaoclk" />
+     
+     <appender name="liubaoAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		 <Prudent>true</Prudent> 
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${liubao.path}/liubao_%d{yyyyMMddHH}.log</fileNamePattern>
+		</rollingPolicy>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>[%d{yyyy-MM-dd HH:mm:ss SSS}] %msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+	
+	<appender name="liubaoclkAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		 <Prudent>true</Prudent> 
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${liubaoclk.path}/liubao_%d{yyyyMMddHH}.clk</fileNamePattern>
+		</rollingPolicy>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<ImmediateFlush>false</ImmediateFlush>
+			<pattern>[%d{yyyy-MM-dd HH:mm:ss SSS}] %msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+	
+	<appender name="rtberrAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		 <Prudent>true</Prudent> 
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logerr.path}/jsqerr_%d{yyyy-MM-dd}.log</fileNamePattern>
+		</rollingPolicy>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>[%d{yyyy-MM-dd HH:mm:ss SSS}] %msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+	
+	
+	<logger name="com.fivelives.net.logger.liubao" >  
+	    <appender-ref ref="liubaoAppender" />  
+	</logger> 
+	
+	<logger name="com.fivelives.net.logger.liubaoclk" >  
+	    <appender-ref ref="liubaoclkAppender" />  
+	</logger> 
+	
+	<root level="INFO">
+	<!-- <appender-ref ref="traceInfo" /> -->	
+		<appender-ref ref="rtberrAppender" />
+		
+	</root>
+</configuration>

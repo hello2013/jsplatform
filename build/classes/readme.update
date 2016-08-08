@@ -1,0 +1,15 @@
+1  修改json 访问路径   为域名访问
+2  去掉打印信息
+3  页面变成不可见
+
+
+完成了   短链点击广告配置化
+完成了  对UA进行判断,完成ios,Android,pc的判断和划分.
+
+
+
+试验过程: 
+1 增加广告位页面  wap   http://ads.zhangfang18.com/jsquery/zhangfang.jsp
+2 增加dataeye url  http://de0.cc/UR3Azu
+3 测试展示,			 
+4 测试点击

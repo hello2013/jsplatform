@@ -1,0 +1,53 @@
+<html>  
+    <head>  
+        <title>usually function</title>  
+    </head>  
+    <script>  
+      
+function load(){  
+	document.getElementById('divclk').addEventListener('click', function() { alert('id1');}, true);
+	//document.getElementById('target').addEventListener('click', function() { alert('target_1');}, true);
+	//document.getElementById("divclk").click();  
+	//document.getElementById("target").click();  
+	var s=0;
+	for(var i=0;i<=10000;i++){
+		var d= Math.random();
+		if(d<=0.015){
+			s++;
+		}
+	}
+	alert(s);
+	
+	try{
+		window!==window.parent.window&&window.parent.window.clickevent&&(w=window.parent.window.clickevent(e))}catch(e){}
+		
+		//w===false?false:(w&&(r+=(r.indexOf("?")>-1?"&":"?")+"sync="+encodeURIComponent(w)),!0)
+				
+				}
+		
+		
+			var xmlhttp;
+		if(window.XMLHttpRequest){
+			xmlhttp=new XMLHttpRequest
+			}else if(ActiveXObject){
+				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP")
+					}
+
+			xmlhttp.open("get","http://www.baidu.com",true); 
+			xmlhttp.send();
+		
+	
+  
+function test(){  
+    alert("test");  
+}  
+      
+</script>  
+    <body onload="load()" >  
+         <div id="divclk">
+         
+       		 <button id="target" >test</button>  
+          
+         </div>
+    </body>  
+<html>      
